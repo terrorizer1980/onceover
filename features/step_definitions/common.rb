@@ -27,6 +27,8 @@ end
 
 When(/^I run onceover command "([^"]*)"$/)  do |command|
   @cmd.command = command
+  require 'pry'; binding.pry
+
   puts @cmd
   @cmd.run
 end

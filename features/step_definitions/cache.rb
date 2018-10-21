@@ -11,6 +11,7 @@ Then(/^the cache should contain all controlrepo files/) do
   puts "Calculating MD5 hashes in cache"
   cache_digest = Cache_Helper.digest(File.join(@repo.root_folder,'.onceover/etc/puppetlabs/code/environments/production/'))
   puts "#{cache_digest.count} MD5 hashes calculated"
+  require 'pry'; binding.pry
   expect(cache_digest).to include(repo_digest)
 end
 
